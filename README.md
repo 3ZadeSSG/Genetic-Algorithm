@@ -1,12 +1,16 @@
+# Genetic-Algorithm
+Simple GA implementation using C++ &amp; Java
+
+
+# Problem Statement
+
 The advt alternatives for a company include TV, newspaper and radio. The cost of each medium with audience converge is given below:-
  
-  ______________________________________
- | 					TV	 	Newspaper 		Radio          |  
- |______________________________________|
- |Cost per advt    2000		600				400     |
- |Audience/Advt.   100000	40000			18000 |
- |______________________________________|
-
+  
+                      TV	 	Newspaper Radio       
+       Cost per advt  2000		600	 400 
+       Audience/Advt. 100000	40000	18000  
+ 
  Local newspaper limits the number of advt from a single company to 10,
  moreover in order to balance advertising among the 3 types of media no more than half of total no. of advts should occur on radio,
  and at least 10% should occur on television.
