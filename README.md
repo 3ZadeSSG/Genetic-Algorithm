@@ -7,7 +7,7 @@ Simple GA implementation using C++ &amp; Java
 The advt alternatives for a company include TV, newspaper and radio. The cost of each medium with audience converge is given below:-
  
   
-                   					TV	 	Newspaper 		Radio       
+              TV	 	Newspaper 		Radio       
        Cost per advt    2000		600				400 
        Audience/Advt.   100000	40000			18000  
  
