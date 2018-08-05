@@ -15,3 +15,8 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
  moreover in order to balance advertising among the 3 types of media no more than half of total no. of advts should occur on radio,
  and at least 10% should occur on television.
  The weekely advt. budget is $18200, how many advts. should be run in each 3 types of media to meximize the total audience.
+
+
+# ToDO
+* [ ] Resolve the mutation function in SimpleGA.java.
+* [x] Resolve the random initialization in C++ program.
