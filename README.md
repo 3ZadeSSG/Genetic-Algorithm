@@ -1,6 +1,6 @@
 # Genetic-Algorithm
 Simple GA implementation using C++ &amp; Java
-
+If you get error due to large population in DevC++ then cosider running this here: https://www.onlinegdb.com/online_c++_compiler
 
 # Problem Statement
 
@@ -21,12 +21,8 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
 * [ ] Resolve the mutation function in SimpleGA.java.
 * [x] Resolve the random initialization in C++ program.
 
-# Implementation of TSP
- As per TSP problem the intial and final city should be the same but in this program only one unique path is created wihout repeating any city, this is because generated unique paths can be compared with cost by adding the initial vertex into the path's ending vertex and checking its validity. (Might update this code in future)
-
-
 # Input Case for TSP
-  In program's Graph input is hard coder into the class constructor. Here's a 17 city input for the TSP
+  In program's Graph input is hard coded  into the class constructor. Here's a 17 city input for the TSP
   
                        0 633 257  91 412 150  80 134 259 505 353 324  70 211 268 246 121
                    633   0 390 661 227 488 572 530 555 289 282 638 567 466 420 745 518
@@ -46,7 +42,7 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
                    246 745 472 237 528 364 332 349 202 685 542 157 289 426 483   0 336
                    121 518 142  84 297  35  29  36 236 390 238 301  55  96 153 336   0 
 
-To add this as input copy the TSP_Input_2 into the class constructor. This should be able to print the optimal path. I ran this using 1000 initial population size with 5 generations and it gave optimal output about 3052. However optimal output for this case is 2085 as said in https://people.sc.fsu.edu/~jburkardt/datasets/tsp/tsp.html . There's issue that if population size is large or number of generations increased then program will halt (Due to memory issue).
+To add this as input copy the TSP_Input_2 into the class constructor. This should be able to print the optimal path. I ran this using 1000 initial population size with 5 generations and it gave optimal output about 3052. However optimal output for this case is 2085 as said in https://people.sc.fsu.edu/~jburkardt/datasets/tsp/tsp.html .
 
 However initializing the population to 20000 in this case without doing any crossover we get 2513 as optimal path in the initial population which can be said close to 2085.
 Here's the output of that:-
