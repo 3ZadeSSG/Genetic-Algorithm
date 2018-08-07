@@ -22,7 +22,7 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
 * [x] Resolve the random initialization in C++ program.
 
 # Input Case for TSP
-  In program's Graph input is hard coder into the class constructor. Here's a 17 city input for the TSP
+  In program's Graph input is hard coded  into the class constructor. Here's a 17 city input for the TSP
   
                        0 633 257  91 412 150  80 134 259 505 353 324  70 211 268 246 121
                    633   0 390 661 227 488 572 530 555 289 282 638 567 466 420 745 518
