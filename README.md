@@ -48,7 +48,7 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
 
 To add this as input copy the TSP_Input_2 into the class constructor. This should be able to print the optimal path. I ran this using 1000 initial population size with 5 generations and it gave optimal output about 3052. However optimal output for this case is 2085 as said in https://people.sc.fsu.edu/~jburkardt/datasets/tsp/tsp.html . There's issue that if population size is large or number of generations increased then program will halt (Due to memory issue).
 
-However initializing the population to 20000 in this case without doing any crossover we get 2513 as optimal path in the initial population which can be said close to 2085 considering the fact that this program doesn't adds and edge between the starting and ending vertex so that initial and final city will be same.
+However initializing the population to 20000 in this case without doing any crossover we get 2513 as optimal path in the initial population which can be said close to 2085.
 Here's the output of that:-
 
                ==================Initial Population==============
