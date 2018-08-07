@@ -1,0 +1,208 @@
+==================Initial Population==============
+
+Fittest Individual:
+Path: 3 2 4 1 5 Fitness: 26
+==================Generation 1==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 2==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 3==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 4==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 5==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 6==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 7==============
+
+Fittest Individual:
+Path: 3 5 4 2 1 Fitness: 41
+==================Generation 8==============
+
+Fittest Individual:
+Path: 1 5 4 3 2 Fitness: 50
+==================Generation 9==============
+
+Fittest Individual:
+Path: 1 5 4 3 2 Fitness: 50
+==================Generation 10==============
+
+Fittest Individual:
+Path: 1 5 4 3 2 Fitness: 50
+==================Generation 11==============
+
+Fittest Individual:
+Path: 1 5 4 3 2 Fitness: 50
+==================Generation 12==============
+
+Fittest Individual:
+Path: 1 5 4 3 2 Fitness: 50
+==================Generation 13==============
+
+Fittest Individual:
+Path: 3 2 5 1 4 Fitness: 36
+==================Generation 14==============
+
+Fittest Individual:
+Path: 3 2 5 1 4 Fitness: 36
+==================Generation 15==============
+
+Fittest Individual:
+Path: 3 2 5 1 4 Fitness: 36
+==================Generation 16==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 17==============
+
+Fittest Individual:
+Path: 1 2 5 3 4 Fitness: 32
+==================Generation 18==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 19==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 20==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 21==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 22==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 23==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 24==============
+
+Fittest Individual:
+Path: 3 4 5 2 1 Fitness: 57
+==================Generation 25==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 26==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 27==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 28==============
+
+Fittest Individual:
+Path: 3 2 5 4 1 Fitness: 59
+==================Generation 29==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 30==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 31==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 32==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 33==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 34==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 35==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 36==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 37==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 38==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 39==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 40==============
+
+Fittest Individual:
+Path: 5 3 1 2 4 Fitness: 64
+==================Generation 41==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 42==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 43==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 44==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 45==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 46==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 47==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 48==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 49==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+==================Generation 50==============
+
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+Fittest Individual:
+Path: 5 3 4 2 1 Fitness: 22
+--------------------------------
+Process exited after 0.8932 seconds with return value 0
