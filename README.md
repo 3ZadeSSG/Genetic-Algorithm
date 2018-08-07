@@ -21,10 +21,6 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
 * [ ] Resolve the mutation function in SimpleGA.java.
 * [x] Resolve the random initialization in C++ program.
 
-# Implementation of TSP
- As per TSP problem the intial and final city should be the same but in this program only one unique path is created wihout repeating any city, this is because generated unique paths can be compared with cost by adding the initial vertex into the path's ending vertex and checking its validity. (Might update this code in future)
-
-
 # Input Case for TSP
   In program's Graph input is hard coder into the class constructor. Here's a 17 city input for the TSP
   
