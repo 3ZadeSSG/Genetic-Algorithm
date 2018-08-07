@@ -35,9 +35,7 @@ public:
 		addEdge(3,5,2);
 		addEdge(4,5,27);
 	}
-	void addAll(vector<pair<ll,ll> >Vertices,vector<pair<ll,ll> >Edges);
 	void addEdge(ll v1,ll v2,ll weight);	//given verices and edge weight betwene them, add a new entry into graph
-	void display(void);						//display the current graph contents
 	ll getCost(vector<ll>Path);				//give a path funciton will reutrn the travel cost or 0 in case path is not valid
 	ll getCost();							//in case the optimal path is set then return the cost of that path
 	ll getTotalVertices();					//return total number of vertices in the Graph
@@ -240,6 +238,7 @@ void Individual::displayIndividual(){
 	for(int i=0;i<Gene.size();i++){
 		cout<<Gene[i]<<" ";
 	}
+	cout<<Gene[0]<<" "; //since last and first vertex has to be same
 	cout<<"Fitness: "<<Fitness;
 }
 ll Individual::getDecesionVariables(){
@@ -254,19 +253,9 @@ bool Graph::isPathValid(vector<ll>Path){
 	}
 	return true;
 }
-void Graph::addAll(vector<pair<ll,ll> >Vertices,vector<pair<ll,ll> >Edges){
-	this->Vertices=Vertices;
-	this->Edges=Edges;
-}
 void Graph::addEdge(ll v1,ll v2,ll weight){
 	Vertices.Add(make_pair(v1,v2));
 	Edges.Add(make_pair(weight,Vertices.size()-1));
-}
-void Graph::display(void){
-	cout<<"\nGraph Contents: \n";
-	for(int i=0;i<Edges.size();i++){
-		cout<<"Vertex: "<<Vertices[i].first<<" Vertex: "<<Vertices[i].second<<" Edge: "<<Edges[i].first<<endl;
-	}
 }
 ll Graph::getTotalVertices(){
 	return TotalVertices;	
@@ -309,13 +298,22 @@ ll Graph::getCost(vector<ll>Path){
 			return 0;
 		}
 	}
+	if(find(Vertices.begin(),Vertices.end(),make_pair(Path[Path.size()-1],Path[0]))<Vertices.end()){
+			cost+=Edges[(find(Vertices.begin(),Vertices.end(),make_pair(Path[Path.size()-1],Path[0]))-Vertices.begin())].first;
+	}
+	else if(find(Vertices.begin(),Vertices.end(),make_pair(Path[0],Path[Path.size()-1]))<Vertices.end()){
+			cost+=Edges[(find(Vertices.begin(),Vertices.end(),make_pair(Path[0],Path[Path.size()-1]))-Vertices.begin())].first;
+	}
+	else{
+		return 0;
+	}
 	return cost;
 }
 ll Graph::getDecesionVariables(){
 	return TotalVertices;
 }
 int main(){
-	SimulateGA g=SimulateGA(100);
+	SimulateGA g=SimulateGA(50);
 	cout<<"\n==================Initial Population==============\n";
 	//g.displayPopulation();
 	g.displayFittest();

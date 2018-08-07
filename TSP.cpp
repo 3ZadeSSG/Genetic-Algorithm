@@ -36,7 +36,6 @@ public:
 		addEdge(4,5,27);
 	}
 	void addEdge(ll v1,ll v2,ll weight);	//given verices and edge weight betwene them, add a new entry into graph
-	void display(void);						//display the current graph contents
 	ll getCost(vector<ll>Path);				//give a path funciton will reutrn the travel cost or 0 in case path is not valid
 	ll getCost();							//in case the optimal path is set then return the cost of that path
 	ll getTotalVertices();					//return total number of vertices in the Graph
@@ -119,13 +118,6 @@ void SimulateGA::doCrossover(){
 		ll p2=random*PopulationSize;
 		MatingPair.Add(make_pair(p1,p2));
 	}
-	//select mating pair in best to worst order 
-	/*sort(Population.begin(),Population.end(),compare);	//sort the population so the fittest ones will be at top
-	for(ll i=0;i<PopulationSize/2;i++){	//create the mating pair from while population
-		ll p1=i;	//select the most fit ones to be added in mating pair
-		ll p2=i+1;
-		MatingPair.Add(make_pair(p1,p2));
-	}*/
 	for(ll index=0;index<MatingPair.size();index++){
 		Individual Parent1=Population[MatingPair[index].first];		//Select 1st parent from population as per mating pair 
 		Individual Parent2=Population[MatingPair[index].second];	//Select 2nd parent from population as per mating pair 
@@ -223,6 +215,7 @@ void Individual::displayIndividual(){
 	for(int i=0;i<Gene.size();i++){
 		cout<<Gene[i]<<" ";
 	}
+	cout<<Gene[0]<<" "; //since last and first vertex has to be same
 	cout<<"Fitness: "<<Fitness;
 }
 ll Individual::getDecesionVariables(){
@@ -241,33 +234,27 @@ void Graph::addEdge(ll v1,ll v2,ll weight){
 	Vertices.Add(make_pair(v1,v2));
 	Edges.Add(make_pair(weight,Vertices.size()-1));
 }
-void Graph::display(void){
-	cout<<"\nGraph Contents: \n";
-	for(int i=0;i<Edges.size();i++){
-		cout<<"Vertex: "<<Vertices[i].first<<" Vertex: "<<Vertices[i].second<<" Edge: "<<Edges[i].first<<endl;
-	}
-}
 ll Graph::getCost(vector<ll>Path){
 	ll cost=0;
-	vector<ll>visited;
+	vector<ll>visited;		//a list of all visited vertices
 	for(ll i=0;i<Path.size()-1;i++){
 		ll v1=Path[i];
-		ll v2=Path[i+1];
-		if(find(visited.begin(),visited.end(),v1)==visited.end()){
-			visited.Add(v1);
+		ll v2=Path[i+1];	
+		if(find(visited.begin(),visited.end(),v1)==visited.end()){	//select the two vertices from path and check if first one is already visited
+			visited.Add(v1);		//if not visited then add the first vertex to visited list
 		}
 		else{
-			return 0;
+			return 0;	//if vertex is visited more than onece then return 0 as cost indicating invalid path
 		}
 		if(i==Path.size()-2){
 			if(find(visited.begin(),visited.end(),v2)==visited.end()){
-			visited.Add(v2);
+			visited.Add(v2);	//if last vertex is not repeated then add it to visited list 
 			}
 			else{
-				return 0;
+				return 0; 	//if last vertex was visited once then return 0 as indicator of invalid cost
 			}
 		}
-		if(find(Vertices.begin(),Vertices.end(),make_pair(v1,v2))<Vertices.end()){
+		if(find(Vertices.begin(),Vertices.end(),make_pair(v1,v2))<Vertices.end()){	
 			cost+=Edges[(find(Vertices.begin(),Vertices.end(),make_pair(v1,v2))-Vertices.begin())].first;
 		}
 		else if(find(Vertices.begin(),Vertices.end(),make_pair(v2,v1))<Vertices.end()){
@@ -277,6 +264,16 @@ ll Graph::getCost(vector<ll>Path){
 			//cout<<"\nNo path found! ";
 			return 0;
 		}
+	}
+	//find cost of edge between last and first vertex because in TSP we need to return back from where we started
+	if(find(Vertices.begin(),Vertices.end(),make_pair(Path[Path.size()-1],Path[0]))<Vertices.end()){
+			cost+=Edges[(find(Vertices.begin(),Vertices.end(),make_pair(Path[Path.size()-1],Path[0]))-Vertices.begin())].first;
+	}
+	else if(find(Vertices.begin(),Vertices.end(),make_pair(Path[0],Path[Path.size()-1]))<Vertices.end()){
+			cost+=Edges[(find(Vertices.begin(),Vertices.end(),make_pair(Path[0],Path[Path.size()-1]))-Vertices.begin())].first;
+	}
+	else{
+		return 0;
 	}
 	return cost;
 }
@@ -301,7 +298,6 @@ int main(){
 	for(int i=0;i<10;i++){
 	cout<<"\n==================Generation "<<i+1<<"==============\n";
 	g.doCrossover();
-	//g.displayPopulation();
 	g.displayFittest();
 	}
 	//g.displayPopulation();
