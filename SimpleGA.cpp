@@ -1,11 +1,4 @@
-#include<stdlib.h>
-#include<iostream>
-#include<vector>
-#include<iomanip>
-#include<math.h>
-#include<time.h>
-#include<random>
-#include<algorithm>
+#include<bits/stdc++.h>
 #define dd double
 #define random (rand()/(double)RAND_MAX)
 #define Add push_back
