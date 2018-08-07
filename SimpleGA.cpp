@@ -43,7 +43,7 @@ public:
 	void setNoOfAds(vector<dd>Array);	//set the number of advt array to same values as the received one
 	int getDecesionVariables(void);  	//return decesion variables count (required to determine the chromosome size)
 	dd getLowerBound(int i); 			//given index of the gene return its corresponding lower bound (required to set the random value to gene)
-	dd getUpperBound(int i);			// "
+	dd getUpperBound(int i);			// 
 	dd getFitness(void);				//return fitness value, targetted audience in this case
 	dd getTotalCost(void);				//return total cost as per the NoOfAdvt array vlaues
 	dd getTotalAudience(void);			//return total number of targetted audience as per the NoOfAdvt array values
@@ -71,13 +71,13 @@ public:
 		//cout<<"\t\t\t\fadsfadsfffffffff"<<TotalCost;
 		TotalAudience=Properties.getTotalAudience();
 	}
-	dd getFitness(void);				//
-	dd getTotalCost(void);				//
-	dd getTotalAudience(void);			//
-	int getDecesionVariables(void);		//
-	vector<dd> getGenes(void);			//
-	bool isValidGene(vector<dd>Array);	//
-	void displayIndividual(void);		//
+	dd getFitness(void);				// return the firness function according to the current gene value
+	dd getTotalCost(void);				// return total cost
+	dd getTotalAudience(void);			// return total audience 
+	int getDecesionVariables(void);		// 
+	vector<dd> getGenes(void);			// return the current gene vlaue held by Individual
+	bool isValidGene(vector<dd>Array);	// 
+	void displayIndividual(void);		//	display the cost,target audience and the gene contents of the current individual
 	void setGenes(vector<dd>Array);		//
 };
 bool compare(const Individual & l, const Individual & r)
@@ -99,6 +99,7 @@ public:
 		CrossoverPoint=1;
 	}
 	void doCrossover();
+	vector<dd> doMutation(vector<dd>Array);
 	void displayPopulation(void);
 	void displayFittest(void);
 	void sortFittest();
@@ -129,6 +130,8 @@ void SimulateGA::doCrossover(void){
 		}
 		Individual Child1;
 		Individual Child2;
+		Gene1=doMutation(Gene1);	//mutate the current produced chlids
+		Gene2=doMutation(Gene2);
 		Child1.setGenes(Gene1);
 		Child2.setGenes(Gene2);
 		vector<Individual>Family;
@@ -141,11 +144,22 @@ void SimulateGA::doCrossover(void){
 			Family.Add(Child2);
 		}
 		sort(Family.begin(),Family.end(),compare);
-		reverse(Family.begin(),Family.end());
+		reverse(Family.begin(),Family.end());	//sort the family into order of their fitness so that fittest ones whethr its parent or child will go to nextgeneration
 		NewPopulation.Add(Family[0]);
 		NewPopulation.Add(Family[1]);
 	}
 	Population=NewPopulation;
+}
+vector<dd> SimulateGA::doMutation(vector<dd>Array){
+	for(int i=0;i<Array.size();i++){
+		dd r=random;
+		if(r<MutationRate){
+			//cout<<"Old "<<Array[i];
+			Array[i]+=(Array[i]*MutationRate);
+			//cout<<"New  "<<Array[i];
+		}
+	}
+	return Array;
 }
 void SimulateGA::displayPopulation(void){
 	cout<<"\n=================Current Population================\n";
@@ -264,7 +278,7 @@ vector<dd> Individual::getGenes(void){
 void Individual::displayIndividual(void){
 	cout<<setw(10)<<(int)TotalCost<<" "<<setw(10)<<(int)TotalAudience<<" ";
 	for(int i=0;i<Gene.size();i++){
-		cout<<setw(10)<<Gene[i]<<" ";
+		cout<<setw(10)<<(int)Gene[i]<<" ";
 	}
 	cout<<endl;
 }
@@ -277,18 +291,16 @@ void Individual::setGenes(vector<dd>Array){
 }
 int main(){
 	//ToDo implement the mutation function so that algorithm doesn't gets stuck at local optima
-	srand(100);
+	srand(100);	//seed value for rand() in case C++11 compiler is not available otherwise #include<random> will do the job
 	SimulateGA g;
 	cout<<"\n=========================Generation 1========================\n";
 	g.displayPopulation();
 	g.displayFittest();
-	cout<<"\n=========================Generation 2========================\n";
-	g.doCrossover();
-	g.displayPopulation();
-	g.displayFittest();
-	cout<<"\n=========================Generation 3========================\n";
-	g.doCrossover();
-	g.displayPopulation();
-	g.displayFittest();
+	for(int i=0;i<50;i++){
+		cout<<"\n=========================Generation "<<i+1<<"========================\n";
+		g.doCrossover();
+	//	g.displayPopulation();
+		g.displayFittest();
+	}
 	return 0;
 }

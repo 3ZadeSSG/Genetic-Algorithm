@@ -1,9 +1,4 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<stdint.h>
-#include<string.h>
-#include<random>
+#include<bits/stdc++.h>
 #define random (rand()/(double)RAND_MAX)
 #define ll int64_t
 #define Add push_back
@@ -295,7 +290,7 @@ int main(){
 	cout<<"\n==================Initial Population==============\n";
 	//g.displayPopulation();
 	g.displayFittest();
-	for(int i=0;i<10;i++){
+	for(int i=0;i<25;i++){
 	cout<<"\n==================Generation "<<i+1<<"==============\n";
 	g.doCrossover();
 	g.displayFittest();

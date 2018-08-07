@@ -1,9 +1,4 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-#include<stdint.h>
-#include<string.h>
-#include<random>
+#include<bits/stdc++.h>
 #define random (rand()/(double)RAND_MAX)
 #define ll int64_t
 #define Add push_back
@@ -313,15 +308,15 @@ ll Graph::getDecesionVariables(){
 	return TotalVertices;
 }
 int main(){
-	SimulateGA g=SimulateGA(50);
+	SimulateGA g=SimulateGA(100);
 	cout<<"\n==================Initial Population==============\n";
-	//g.displayPopulation();
+	g.displayPopulation();
 	g.displayFittest();
-	for(int i=0;i<10;i++){
+	/*for(int i=0;i<10;i++){
 		cout<<"\n==================Generation "<<i+1<<"==============\n";
 		g.doCrossover();
 		g.displayFittest();
-	}
+	}*/
 	//g.displayPopulation();
 	g.displayFittest();
 	return 0;
