@@ -50,4 +50,4 @@ Here's the output of that:-
                ==================Initial Population==============
 
          Fittest Individual:
-         Path: 10 2 11 5 15 3 6 17 12 9 16 14 7 4 13 1 8 Fitness: 2513
+          Fitness: 2513
