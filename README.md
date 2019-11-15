@@ -22,10 +22,6 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
  The weekely advt. budget is $18200, how many advts. should be run in each 3 types of media to meximize the total audience.
 
 
-# ToDO
-* [ ] Resolve the mutation function in SimpleGA.java.
-* [x] Resolve the random initialization in C++ program.
-
 # Input Case for TSP
   In program's Graph input is hard coded  into the class constructor. Here's a 17 city input for the TSP
   
