@@ -1,5 +1,5 @@
 # Genetic-Algorithm
-Simple GA implementation using C++ &amp; Java
+Simple GA implementation using C++ &amp; Java.
 If you get error due to large population in DevC++ then cosider running this here: https://www.onlinegdb.com/online_c++_compiler
 
 For DevC++ users, to get the C++11 support:
@@ -9,7 +9,7 @@ For DevC++ users, to get the C++11 support:
  
 # Problem Statement
 
-The advt alternatives for a company include TV, newspaper and radio. The cost of each medium with audience converge is given below:-
+1. The advt alternatives for a company include TV, newspaper and radio. The cost of each medium with audience converge is given below:-
  
   
                       TV	 	Newspaper Radio       
@@ -21,9 +21,10 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
  and at least 10% should occur on television.
  The weekely advt. budget is $18200, how many advts. should be run in each 3 types of media to meximize the total audience.
 
+2. Construct a Genetic Algorithm based approach to solve TSP (Travelling Salesman Problem).
 
 # Input Case for TSP
-  In program's Graph input is hard coded  into the class constructor. Here's a 17 city input for the TSP
+  In program's Graph input is hard coded into the class constructor for testing. Here's a 17 city input for the TSP
   
                        0 633 257  91 412 150  80 134 259 505 353 324  70 211 268 246 121
                    633   0 390 661 227 488 572 530 555 289 282 638 567 466 420 745 518
@@ -43,8 +44,7 @@ The advt alternatives for a company include TV, newspaper and radio. The cost of
                    246 745 472 237 528 364 332 349 202 685 542 157 289 426 483   0 336
                    121 518 142  84 297  35  29  36 236 390 238 301  55  96 153 336   0 
 
-To add this as input copy the TSP_Input_2 into the class constructor. This should be able to print the optimal path. I ran this using 1000 initial population size with 5 generations and it gave optimal output about 3052. However optimal output for this case is 2085 as said in https://people.sc.fsu.edu/~jburkardt/datasets/tsp/tsp.html .
-
+As per GA, it starts with minimizing objective function which is in this case total distance covered. I ran this using 1000 initial population size with 5 generations and it gave optimal output about 3052. However optimal output for this case is 2085 as said in https://people.sc.fsu.edu/~jburkardt/datasets/tsp/tsp.html .
 However initializing the population to 20000 in this case without doing any crossover we get 2513 as optimal path in the initial population which can be said close to 2085.
 Here's the output of that:-
 
@@ -52,3 +52,5 @@ Here's the output of that:-
 
          Fittest Individual:
           Fitness: 2513
+
+This concludes that optimization problems like TSP can be solved with GA efficiently as it can search from multiple points in search space. 
